@@ -1,72 +1,8 @@
+-- Server Side script by Paul
 local ScreenGui = Instance.new("ScreenGui")
 local Executor = Instance.new("Frame")
 local Close = Instance.new("TextButton")
-local UICorner = Instance.new("UICorner")
-local TopBar = Instance.new("TextLabel")
-local Script = Instance.new("TextButton")
-local Script2 = Instance.new("TextButton")
-local Script3 = Instance.new("TextButton")
-local Script4 = Instance.new("TextButton")
-local Script5 = Instance.new("TextButton")
-local Script6 = Instance.new("TextButton")
-local Script7 = Instance.new("TextButton")
-local UICorner_2 = Instance.new("UICorner")
-local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
-local Down = Instance.new("Frame")
-local UICorner_3 = Instance.new("UICorner")
-local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
-local EditorScroller = Instance.new("ScrollingFrame")
-local Editor = Instance.new("TextBox")
-local UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint")
-local UIAspectRatioConstraint_4 = Instance.new("UIAspectRatioConstraint")
-local ScriptTab = Instance.new("Frame")
-local UICorner_4 = Instance.new("UICorner")
-local UIAspectRatioConstraint_5 = Instance.new("UIAspectRatioConstraint")
-local Execute = Instance.new("TextButton")
-local Theme = Instance.new("TextButton")
-local UICorner_5 = Instance.new("UICorner")
-local UIAspectRatioConstraint_6 = Instance.new("UIAspectRatioConstraint")
-local Clear = Instance.new("TextButton")
-local Button = Instance.new("TextButton")
-local Button2 = Instance.new("TextButton")
-local Button3 = Instance.new("TextButton")
-local UICorner_6 = Instance.new("UICorner")
-local UIAspectRatioConstraint_7 = Instance.new("UIAspectRatioConstraint")
-local Save = Instance.new("TextButton")
-local UICorner_7 = Instance.new("UICorner")
-local UIAspectRatioConstraint_8 = Instance.new("UIAspectRatioConstraint")
-local UIAspectRatioConstraint_9 = Instance.new("UIAspectRatioConstraint")
-
---Properties:
-
-ScreenGui.Parent = game.CoreGui
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-Executor.Name = "Executor"
-Executor.Parent = ScreenGui
-Executor.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-Executor.BorderColor3 = Color3.fromRGB(0, 0, 255)
-Executor.BorderSizePixel = 4
-Executor.Position = UDim2.new(0.0714285746, 0, 0.216000006, 0)
-Executor.Size = UDim2.new(0, 1, 0, 1)
-
-UICorner.Parent = Executor
-
-Script7.Name = "Script7"
-Script7.Parent = Executor
-Script7.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-Script7.BorderColor3 = Color3.fromRGB(255, 255, 255)
-Script7.BorderSizePixel = 1
-Script7.Position = UDim2.new(0, 0, 0, 0)
-Script7.Size = UDim2.new(0, 24, 0, 28)
-Script7.Font = Enum.Font.SourceSans
-Script7.Text = "📜"
-Script7.TextColor3 = Color3.fromRGB(255, 255, 255)
-Script7.TextSize = 50.000
-Script7.MouseButton1Down:connect(function()
-local ScreenGui = Instance.new("ScreenGui")
-local Executor = Instance.new("Frame")
-local Close = Instance.new("TextButton")
+local mini = Instance.new("TextButton")
 local UICorner = Instance.new("UICorner")
 local TopBar = Instance.new("TextLabel")
 local Script = Instance.new("TextButton")
@@ -282,6 +218,26 @@ Close.TextColor3 = Color3.fromRGB(255, 255, 255)
 Close.TextSize = 24.000
 Close.MouseButton1Down:connect(function()
 ScreenGui:Destroy()
+end)
+mini.Name = "Close"
+mini.Parent = Executor
+mini.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+mini.BorderColor3 = Color3.fromRGB(25, 25, 25)
+mini.BorderSizePixel = 1
+mini.Position = UDim2.new(0, 576, 0, 1)
+mini.Size = UDim2.new(0, 30, 0, 27)
+mini.Font = Enum.Font.SourceSans
+mini.Text = "_"
+mini.TextColor3 = Color3.fromRGB(255, 255, 255)
+mini.TextSize = 24.000
+mini.MouseButton1Down:connect(function()
+game.StarterGui:SetCore("SendNotification", {
+        Title = "Synapse X";
+        Text = "Server Side minimized.";
+        Duration = 3;
+    })
+    synminbutt.Visible = true
+    MainFrame.Visible = false
 end)
 Script.Name = "Script"
 Script.Parent = Executor
