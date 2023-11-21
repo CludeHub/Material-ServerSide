@@ -1,9 +1,9 @@
--- Server Side script
--- Script by Paul 
--- Subscribe to clude80 for a gui
-
+-- Server Side script by Paul
+-- this server side is level 3
+-- dont claim or copy this script!! just make your own gui kid
 local ScreenGui = Instance.new("ScreenGui")
 local Executor = Instance.new("Frame")
+local synminbutt = Instance.new("ImageButton")
 local Close = Instance.new("TextButton")
 local mini = Instance.new("TextButton")
 local UICorner = Instance.new("UICorner")
@@ -208,6 +208,20 @@ Button3.TextSize = 20.000
 Button3.MouseButton1Down:connect(function()
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/Imagnir/r6_anims_for_r15/main/r6_anims.lua'),true))()
 end)
+synminbutt.Name = "synminbutt"
+synminbutt.Parent = Executor
+synminbutt.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+synminbutt.BackgroundTransparency = 1.000
+synminbutt.Position = UDim2.new(0, 0, 0, 0)
+synminbutt.Size = UDim2.new(0, 24, 0, 28)
+synminbutt.Visible = false
+synminbutt.ZIndex = 14
+synminbutt.Image = "http://www.roblox.com/asset/?id=7641125882"
+synminbutt.ImageRectSize = Vector2.new(138, 167)
+synminbutt.MouseButton1Click:Connect(function()
+    MainFrame.Visible = true
+    synminbutt.Visible = false
+end)
 Close.Name = "Close"
 Close.Parent = Executor
 Close.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
@@ -227,15 +241,15 @@ mini.Parent = Executor
 mini.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 mini.BorderColor3 = Color3.fromRGB(25, 25, 25)
 mini.BorderSizePixel = 1
-mini.Position = UDim2.new(0, 560, 0, 1)
-mini.Size = UDim2.new(0, 30, 0, 27)
+mini.Position = UDim2.new(0, 550, 0, 0)
+mini.Size = UDim2.new(0, 28, 0, 20)
 mini.Font = Enum.Font.SourceSans
 mini.Text = "_"
 mini.TextColor3 = Color3.fromRGB(255, 255, 255)
 mini.TextSize = 24.000
 mini.MouseButton1Down:connect(function()
 game.StarterGui:SetCore("SendNotification", {
-        Title = "Synapse X";
+        Title = "Server Side";
         Text = "Server Side minimized.";
         Duration = 3;
     })
@@ -247,7 +261,7 @@ Script.Parent = Executor
 Script.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 Script.BorderColor3 = Color3.fromRGB(255, 255, 255)
 Script.BorderSizePixel = 1
-Script.Position = UDim2.new(0, 479, 0, 50)
+Script.Position = UDim2.new(0, 479, 0, 48)
 Script.Size = UDim2.new(0, 54, 0, 27)
 Script.Font = Enum.Font.SourceSans
 Script.Text = "Hack1📜"
