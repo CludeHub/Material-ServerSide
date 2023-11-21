@@ -1,6 +1,7 @@
 -- Server Side script by Paul
 -- this server side is level 3
 -- dont claim or copy this script!! just make your own gui kid
+
 local ScreenGui = Instance.new("ScreenGui")
 local Executor = Instance.new("Frame")
 local synminbutt = Instance.new("ImageButton")
@@ -236,7 +237,7 @@ Close.TextSize = 24.000
 Close.MouseButton1Down:connect(function()
 ScreenGui:Destroy()
 end)
-mini.Name = "Close"
+mini.Name = "mini"
 mini.Parent = Executor
 mini.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 mini.BorderColor3 = Color3.fromRGB(25, 25, 25)
