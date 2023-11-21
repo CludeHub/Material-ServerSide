@@ -54,15 +54,6 @@ Executor.BorderSizePixel = 2
 Executor.Position = UDim2.new(0.0714285746, 0, 0.216000006, 0)
 Executor.Size = UDim2.new(0, 685, 0, 363)
 
-ImageLabel.Parent = Executor
-ImageLabel.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
-ImageLabel.BorderSizePixel = 0
-ImageLabel.Position = UDim2.new(0.0252733715, 0, 0.015625, 39)
-ImageLabel.Size = UDim2.new(0, 541, 0, 232)
-
-Tabs.Name = "Tabs"
-Tabs.Parent = ImageLabel
-
 TopBar.Name = "TopBar"
 TopBar.Parent = Executor
 TopBar.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
@@ -233,7 +224,8 @@ end)
 synminbutt.Name = "synminbutt"
 synminbutt.Parent = Executor
 synminbutt.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-synminbutt.BackgroundTransparency = 1.000
+synminbutt.BorderColor3 = Color3.fromRGB(45, 45, 45)
+synminbutt.BorderSizePixel = 2
 synminbutt.Position = UDim2.new(0, 0, 0, 0)
 synminbutt.Size = UDim2.new(0, 24, 0, 28)
 synminbutt.Visible = false
@@ -250,7 +242,7 @@ Mini.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Mini.BackgroundTransparency = 1.000
 Mini.BorderColor3 = Color3.fromRGB(27, 42, 53)
 Mini.BorderSizePixel = 0
-Mini.Position = UDim2.new(0, 525, 0, 1)
+Mini.Position = UDim2.new(0, 560, 0, 1)
 Mini.Size = UDim2.new(0, 21, 0, 25)
 Mini.Font = Enum.Font.Arial
 Mini.Text = "_"
