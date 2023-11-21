@@ -212,9 +212,8 @@ end)
 synminbutt.Name = "synminbutt"
 synminbutt.Parent = Executor
 synminbutt.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-synminbutt.BackgroundTransparency = 1.000
-synminbutt.Position = UDim2.new(0, 0, 0, 0)
-synminbutt.Size = UDim2.new(0, 24, 0, 28)
+synminbutt.Position = UDim2.new(0, 479, 0, 146)
+synminbutt.Size = UDim2.new(0, 26, 0, 30)
 synminbutt.Visible = true
 synminbutt.ZIndex = 14
 synminbutt.Image = "http://www.roblox.com/asset/?id=11588317701"
