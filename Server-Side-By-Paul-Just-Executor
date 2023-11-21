@@ -1,4 +1,5 @@
 -- Server Side script by Paul
+
 local ScreenGui = Instance.new("ScreenGui")
 local Executor = Instance.new("Frame")
 local Close = Instance.new("TextButton")
