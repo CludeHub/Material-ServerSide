@@ -53,7 +53,7 @@ Executor.Parent = ScreenGui
 Executor.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 Executor.BorderColor3 = Color3.fromRGB(0, 0, 255)
 Executor.BorderSizePixel = 2
-Executor.Position = UDim2.new(0.0714285746, 0, 0.216000006, 0)
+Executor.Position = UDim2.new(0, 0, 0, 0)
 Executor.Size = UDim2.new(0, 685, 0, 363)
 
 TopBar.Name = "TopBar"
@@ -211,13 +211,15 @@ loadstring(game:HttpGet(('https://raw.githubusercontent.com/Imagnir/r6_anims_for
 end)
 synminbutt.Name = "synminbutt"
 synminbutt.Parent = Executor
-synminbutt.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-synminbutt.Position = UDim2.new(0, 479, 0, 146)
-synminbutt.Size = UDim2.new(0, 26, 0, 30)
+synminbutt.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+synminbutt.BorderColor3 = Color3.fromRGB(25, 25, 25)
+synminbutt.BorderSizePixel = 2
+synminbutt.Position = UDim2.new(0, 479, 0, 170)
+synminbutt.Size = UDim2.new(0, 125, 0, 125)
 synminbutt.Visible = true
 synminbutt.ZIndex = 14
 synminbutt.Image = "http://www.roblox.com/asset/?id=11588317701"
-synminbutt.ImageRectSize = Vector2.new(0, 180, 0, 200)
+synminbutt.ImageRectSize = Vector2.new(330, 410)
 synminbutt.MouseButton1Click:Connect(function()
     MainFrame.Visible = true
     synminbutt.Visible = true
