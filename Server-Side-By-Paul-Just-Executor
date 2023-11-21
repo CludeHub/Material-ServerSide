@@ -217,7 +217,7 @@ synminbutt.Size = UDim2.new(0, 26, 0, 30)
 synminbutt.Visible = true
 synminbutt.ZIndex = 14
 synminbutt.Image = "http://www.roblox.com/asset/?id=11588317701"
-synminbutt.ImageRectSize = Vector2.new(180, 200)
+synminbutt.ImageRectSize = Vector2.new(0, 180, 0, 200)
 synminbutt.MouseButton1Click:Connect(function()
     MainFrame.Visible = true
     synminbutt.Visible = true
