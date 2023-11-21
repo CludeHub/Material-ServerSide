@@ -3,8 +3,6 @@
 local ScreenGui = Instance.new("ScreenGui")
 local Executor = Instance.new("Frame")
 local Close = Instance.new("TextButton")
-local Mini = Instance.new("TextButton")
-local synminbutt = Instance.new("ImageButton")
 local UICorner = Instance.new("UICorner")
 local TopBar = Instance.new("TextLabel")
 local Script = Instance.new("TextButton")
@@ -133,7 +131,7 @@ Execute.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 Execute.Position = UDim2.new(0, 10, 0, 300)
 Execute.Size = UDim2.new(0, 106, 0, 27)
 Execute.Font = Enum.Font.SourceSans
-Execute.Text = "Execute📜"
+Execute.Text = "Execute📜" -- Text of the button
 Execute.TextColor3 = Color3.fromRGB(255, 255, 255)
 Execute.TextSize = 20.000
 
@@ -150,7 +148,7 @@ Button.BorderSizePixel = 1
 Button.Position = UDim2.new(0, 108, 0, 300)
 Button.Size = UDim2.new(0, 105, 0, 27)
 Button.Font = Enum.Font.SourceSans
-Button.Text = "Clear🧹"
+Button.Text = "Clear🧹" -- Text of the button
 Button.TextColor3 = Color3.fromRGB(255, 255, 255)
 Button.TextSize = 20.000
 
@@ -162,7 +160,7 @@ Clear.BorderSizePixel = 1
 Clear.Position = UDim2.new(0, 108, 0, 300)
 Clear.Size = UDim2.new(0, 105, 0, 27)
 Clear.Font = Enum.Font.SourceSans
-Clear.Text = "Clear🧹"
+Clear.Text = "Clear🧹" -- Text of the button
 Clear.TextColor3 = Color3.fromRGB(255, 255, 255)
 Clear.TextSize = 20.000
 
@@ -187,7 +185,7 @@ Button2.BorderSizePixel = 1
 Button2.Position = UDim2.new(0, 208, 0, 300)
 Button2.Size = UDim2.new(0, 105, 0, 27)
 Button2.Font = Enum.Font.SourceSans
-Button2.Text = "Infinite Yield☑️"
+Button2.Text = "Infinite Yield☑️" -- button scripts
 Button2.TextColor3 = Color3.fromRGB(255, 255, 255)
 Button2.TextSize = 18.000
 Button2.MouseButton1Down:connect(function()
@@ -221,42 +219,8 @@ Close.TextSize = 24.000
 Close.MouseButton1Down:connect(function()
 ScreenGui:Destroy()
 end)
-synminbutt.Name = "synminbutt"
-synminbutt.Parent = Executor
-synminbutt.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-synminbutt.BorderColor3 = Color3.fromRGB(45, 45, 45)
-synminbutt.BorderSizePixel = 2
-synminbutt.Position = UDim2.new(0, 0, 0, 0)
-synminbutt.Size = UDim2.new(0, 24, 0, 28)
-synminbutt.Visible = false
-synminbutt.ZIndex = 14
-synminbutt.Image = "http://www.roblox.com/asset/?id=7641125882"
-synminbutt.ImageRectSize = Vector2.new(138, 167)
-synminbutt.MouseButton1Click:Connect(function()
-    MainFrame.Visible = true
-    synminbutt.Visible = false
-end)
-Mini.Name = "Mini"
-Mini.Parent = TopBar
-Mini.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Mini.BackgroundTransparency = 1.000
-Mini.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Mini.BorderSizePixel = 0
-Mini.Position = UDim2.new(0, 560, 0, 1)
-Mini.Size = UDim2.new(0, 21, 0, 25)
-Mini.Font = Enum.Font.Arial
-Mini.Text = "_"
-Mini.TextColor3 = Color3.fromRGB(255, 255, 255)
-Mini.TextSize = 14.000
-Mini.MouseButton1Click:Connect(function()
-    game.StarterGui:SetCore("SendNotification", {
-        Title = "Server Side";
-        Text = "Server Side minimized.";
-        Duration = 3;
-    })
-    synminbutt.Visible = true
-    MainFrame.Visible = false
-end)
+ = 1
+m
 Script.Name = "Script"
 Script.Parent = Executor
 Script.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
