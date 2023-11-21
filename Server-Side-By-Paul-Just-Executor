@@ -358,4 +358,3 @@ local function JPWI_fake_script() -- Executor.LocalScript
 	script.Parent:TweenPosition(UDim2.new(0.308, 0,0.262, 0), "Out", "Quint",1,true)
 end
 coroutine.wrap(JPWI_fake_script)()
-end)
