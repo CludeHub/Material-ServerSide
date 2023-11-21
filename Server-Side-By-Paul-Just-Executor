@@ -215,13 +215,13 @@ synminbutt.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 synminbutt.BackgroundTransparency = 1.000
 synminbutt.Position = UDim2.new(0, 0, 0, 0)
 synminbutt.Size = UDim2.new(0, 24, 0, 28)
-synminbutt.Visible = false
+synminbutt.Visible = true
 synminbutt.ZIndex = 14
-synminbutt.Image = "http://www.roblox.com/asset/?id=7641125882"
+synminbutt.Image = "http://www.roblox.com/asset/?id=11588317701"
 synminbutt.ImageRectSize = Vector2.new(138, 167)
 synminbutt.MouseButton1Click:Connect(function()
     MainFrame.Visible = true
-    synminbutt.Visible = false
+    synminbutt.Visible = true
 end)
 Close.Name = "Close"
 Close.Parent = Executor
@@ -245,7 +245,7 @@ mini.BorderSizePixel = 1
 mini.Position = UDim2.new(0, 550, 0, 0)
 mini.Size = UDim2.new(0, 28, 0, 20)
 mini.Font = Enum.Font.SourceSans
-mini.Text = "_"
+mini.Text = ""
 mini.TextColor3 = Color3.fromRGB(255, 255, 255)
 mini.TextSize = 24.000
 mini.MouseButton1Down:connect(function()
