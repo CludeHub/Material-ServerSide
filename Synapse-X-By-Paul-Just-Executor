@@ -1,7 +1,4 @@
--- Server Side in game executor reworked by Cremi for scriptblox.com
--- lol its joke this is a Server Side level 4
--- click the attach to make the script working!
--- script by Paul and Clude
+-- Synapse X in game executor reworked by Cremi for scriptblox.com
 
 pcall(function() game.CoreGui["Synapse X"]:Destroy() end)
 
@@ -65,7 +62,7 @@ SynapseXreal.ResetOnSpawn = false
 MainFrame.Name = "MainFrame"
 MainFrame.Parent = SynapseXreal
 MainFrame.Active = true
-MainFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+MainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 MainFrame.BorderSizePixel = 0
 MainFrame.Position = UDim2.new(0.0543109924, 0, 0.103222892, 0)
 MainFrame.Size = UDim2.new(0, 689, 0, 320)
@@ -73,11 +70,26 @@ MainFrame.Visible = true
 
 bar.Name = "bar"
 bar.Parent = MainFrame
-bar.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+bar.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 bar.BackgroundTransparency = 0.800
 bar.BorderSizePixel = 0
 bar.Position = UDim2.new(-0, 0, -0.00296382909, 0)
 bar.Size = UDim2.new(0, 689, 0, 25)
+
+synminbutt.Name = "synminbutt"
+synminbutt.Parent = SynapseXreal
+synminbutt.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+synminbutt.BackgroundTransparency = 1.000
+synminbutt.Position = UDim2.new(0, 0, 0, 0)
+synminbutt.Size = UDim2.new(0, 24, 0, 28)
+synminbutt.Visible = false
+synminbutt.ZIndex = 14
+synminbutt.Image = "http://www.roblox.com/asset/?id=7641125882"
+synminbutt.ImageRectSize = Vector2.new(138, 167)
+synminbutt.MouseButton1Click:Connect(function()
+    MainFrame.Visible = true
+    synminbutt.Visible = false
+end)
 
 Close.Name = "Close"
 Close.Parent = bar
@@ -90,14 +102,14 @@ Close.Size = UDim2.new(0, 21, 0, 25)
 Close.Font = Enum.Font.Arial
 Close.Text = "X"
 Close.TextColor3 = Color3.fromRGB(255, 255, 255)
-Close.TextSize = 15.000
+Close.TextSize = 14.000
 Close.MouseButton1Click:Connect(function()
     SynapseXreal:Destroy()
 end)
 
 Mini.Name = "Mini"
 Mini.Parent = bar
-Mini.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+Mini.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Mini.BackgroundTransparency = 1.000
 Mini.BorderColor3 = Color3.fromRGB(27, 42, 53)
 Mini.BorderSizePixel = 0
@@ -106,11 +118,11 @@ Mini.Size = UDim2.new(0, 21, 0, 25)
 Mini.Font = Enum.Font.Arial
 Mini.Text = "_"
 Mini.TextColor3 = Color3.fromRGB(255, 255, 255)
-Mini.TextSize = 15.000
+Mini.TextSize = 14.000
 Mini.MouseButton1Click:Connect(function()
     game.StarterGui:SetCore("SendNotification", {
-        Title = "ServerSide";
-        Text = "ServerSide minimized.";
+        Title = "Synapse X";
+        Text = "Synapse X minimized.";
         Duration = 2;
     })
     synminbutt.Visible = true
@@ -119,7 +131,7 @@ end)
 
 Min.Name = "Min"
 Min.Parent = bar
-Min.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+Min.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Min.BackgroundTransparency = 1.000
 Min.BorderColor3 = Color3.fromRGB(27, 42, 53)
 Min.BorderSizePixel = 0
@@ -128,11 +140,11 @@ Min.Size = UDim2.new(0, 21, 0, 25)
 Min.Font = Enum.Font.Arial
 Min.Text = "M"
 Min.TextColor3 = Color3.fromRGB(255, 255, 255)
-Min.TextSize = 15.000
+Min.TextSize = 14.000
 Min.MouseButton1Click:Connect(function()
     game.StarterGui:SetCore("SendNotification", {
-        Title = "ServerSide";
-        Text = "ServerSide hide. Press F6 to back.";
+        Title = "Synapse X";
+        Text = "Synapse X hide. Press F6 to back.";
         Duration = 2;
     })
     MainFrame.Visible = false
@@ -150,18 +162,18 @@ Tabs.Parent = ImageLabel
 
 NewTab.Name = "NewTab"
 NewTab.Parent = Tabs
-NewTab.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+NewTab.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 NewTab.BorderSizePixel = 0
 NewTab.Position = UDim2.new(0, 0, -0.0659999996, 0)
 NewTab.Size = UDim2.new(0, 14, 0, 14)
 NewTab.Font = Enum.Font.SourceSans
 NewTab.Text = "+"
 NewTab.TextColor3 = Color3.fromRGB(255, 255, 255)
-NewTab.TextSize = 15.000
+NewTab.TextSize = 14.000
 
 security.Name = "security"
 security.Parent = ImageLabel
-security.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+security.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
 security.Size = UDim2.new(0, 552, 0, 258)
 security.Visible = false
 security.Font = Enum.Font.SourceSans
@@ -171,7 +183,7 @@ security.TextSize = 14.000
 EditorFrame.Name = "EditorFrame"
 EditorFrame.Parent = ImageLabel
 EditorFrame.Active = true
-EditorFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+EditorFrame.BackgroundColor3 = Color3.fromRGB(48, 50, 52)
 EditorFrame.BackgroundTransparency = 1.000
 EditorFrame.BorderColor3 = Color3.fromRGB(61, 61, 61)
 EditorFrame.Size = UDim2.new(1, 0, 1, 0)
@@ -196,7 +208,7 @@ Source.ClearTextOnFocus = false
 Source.Font = Enum.Font.Code
 Source.MultiLine = true
 Source.ShowNativeInput = false
-Source.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
+Source.PlaceholderColor3 = Color3.fromRGB(204, 204, 2-4)
 Source.Text = ""
 Source.TextColor3 = Color3.fromRGB(204, 204, 204)
 Source.TextSize = 15.000
@@ -205,7 +217,7 @@ Source.TextYAlignment = Enum.TextYAlignment.Top
 
 Comments_.Name = "Comments_"
 Comments_.Parent = Source
-Comments_.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Comments_.BackgroundColor3 = Color3.fromRGB(48, 50, 52)
 Comments_.BackgroundTransparency = 1.000
 Comments_.Size = UDim2.new(1, 0, 1, 0)
 Comments_.ZIndex = 5
@@ -313,7 +325,7 @@ title.BackgroundTransparency = 1.000
 title.Position = UDim2.new(0.330062926, 0, 0.00625000056, 0)
 title.Size = UDim2.new(0, 200, 0, 22)
 title.Font = Enum.Font.SourceSans
-title.Text = "Server Side Executor - (Made By Paul) "
+title.Text = "Synapse X - Made By Paul"
 title.TextColor3 = Color3.fromRGB(255, 255, 255)
 title.TextSize = 16.000
 
@@ -326,7 +338,7 @@ list.Size = UDim2.new(0, 114, 0, 246)
 
 execute.Name = "execute"
 execute.Parent = MainFrame
-execute.BackgroundColor3 = Color3.fromRGB(104, 104, 104)
+execute.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 execute.BackgroundTransparency = 0.800
 execute.BorderSizePixel = 0
 execute.Position = UDim2.new(0.0095389355, 0, 0.887499988, 0)
@@ -340,13 +352,13 @@ execute.MouseButton1Click:Connect(function()
         loadstring(Source.Text)()
     end
     if injected == false then
-        title.Text = "Server Side - (Not injected! Press attach)"
+        title.Text = "Synapse X - (Not injected! Press attach)"
     end
 end)
 
 clear.Name = "clear"
 clear.Parent = MainFrame
-clear.BackgroundColor3 = Color3.fromRGB(104, 104, 104)
+clear.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 clear.BackgroundTransparency = 0.800
 clear.BorderSizePixel = 0
 clear.Position = UDim2.new(0.154146105, 0, 0.887499988, 0)
@@ -361,7 +373,7 @@ end)
 
 Attach.Name = "Attach"
 Attach.Parent = MainFrame
-Attach.BackgroundColor3 = Color3.fromRGB(104, 104, 104)
+Attach.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 Attach.BackgroundTransparency = 0.800
 Attach.BorderSizePixel = 0
 Attach.Position = UDim2.new(0.741144657, 0, 0.887499988, 0)
@@ -372,25 +384,49 @@ Attach.TextColor3 = Color3.fromRGB(255, 255, 255)
 Attach.TextSize = 14.000
 Attach.MouseButton1Click:Connect(function()
     if injected == true then
-        title.Text = "ServerSide - (Already injected!)"
+        title.Text = "Synapse X - (Already injected!)"
         wait(1)
-        title.Text = "ServerSide - vRBX (Modded by CremiWorld)"
+        title.Text = "Synapse X - vRBX (Modded by CremiWorld)"
     end
-    if injected == true then
-        title.Text = "ServerSide - (Checking...)"
+    if injected == false then
+        title.Text = "Synapse X - (Checking...)"
         wait(0.1)
-        title.Text = "ServerSide - (Injecting...)"
+        title.Text = "Synapse X - (Injecting...)"
         wait(1.5)
-        title.Text = "ServerSide - (Checking Whitelist...)"
+        title.Text = "Synapse X - (Checking Whitelist...)"
         wait(0.8)
-        title.Text = "ServerSide - (Scanning...)"
+        title.Text = "Synapse X - (Scanning...)"
         wait(0.3)
-        title.Text = "ServerSide - (Ready!)"
+        title.Text = "Synapse X - (Ready!)"
         wait(0.5)
-        title.Text = "ServerSide - vRBX (Made By Paul)"
-        injected = false
+        title.Text = "Synapse X - vRBX (Modded by CremiWorld)"
+        injected = true
     end
 end)
+
+desc.Name = "desc"
+desc.Parent = scripthub_2
+desc.BackgroundColor3 = Color3.fromRGB(21, 21, 21)
+desc.BorderSizePixel = 0
+desc.Position = UDim2.new(0.340342641, 0, 0.613114715, 0)
+desc.Size = UDim2.new(0, 184, 0, 69)
+desc.ZIndex = 110
+
+descri.Name = "descri"
+descri.Parent = desc
+descri.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+descri.BackgroundTransparency = 1.000
+descri.BorderSizePixel = 0
+descri.Position = UDim2.new(0.0112334546, 0, 0, 0)
+descri.Size = UDim2.new(0, 181, 0, 69)
+descri.Font = Enum.Font.SourceSans
+descri.Text = ""
+descri.TextColor3 = Color3.fromRGB(255, 255, 255)
+descri.TextSize = 15.000
+descri.TextWrapped = true
+descri.TextXAlignment = Enum.TextXAlignment.Left
+descri.TextYAlignment = Enum.TextYAlignment.Top
+descri.ZIndex = 125
 
 title_3.Name = "title"
 title_3.Parent = scripthub_2
@@ -406,7 +442,7 @@ title_3.ZIndex = 110
 
 execute_2.Name = "execute"
 execute_2.Parent = scripthub_2
-execute_2.BackgroundColor3 = Color3.fromRGB(104, 104, 104)
+execute_2.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 execute_2.BackgroundTransparency = 0.800
 execute_2.BorderSizePixel = 0
 execute_2.Position = UDim2.new(0.34057343, 0, 0.871106505, 0)
@@ -445,7 +481,7 @@ end)
 
 close.Name = "close"
 close.Parent = scripthub_2
-close.BackgroundColor3 = Color3.fromRGB(104, 104, 104)
+close.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 close.BackgroundTransparency = 0.800
 close.BorderSizePixel = 0
 close.Position = UDim2.new(0.685180664, 0, 0.871106505, 0)
@@ -491,29 +527,6 @@ title_6.Size = UDim2.new(0, 18, 0, 24)
 title_6.ZIndex = 110
 title_6.Image = "http://www.roblox.com/asset/?id=7641125882"
 title_6.ImageRectSize = Vector2.new(138, 167)
-
-synapsex3.Name = "synapsex3"
-synapsex3.Parent = optionspage
-synapsex3.BackgroundColor3 = Color3.fromRGB(104, 104, 104)
-synapsex3.BackgroundTransparency = 0.800
-synapsex3.BorderSizePixel = 0
-synapsex3.Position = UDim2.new(0.30757343, 0, 0.391106505, 0)
-synapsex3.Size = UDim2.new(0, 123, 0, 30)
-synapsex3.Font = Enum.Font.Arial
-synapsex3.Text = "Synapse X v3"
-synapsex3.TextColor3 = Color3.fromRGB(255, 255, 255)
-synapsex3.TextSize = 14.000
-synapsex3.ZIndex = 110
-synapsex3.MouseButton1Click:Connect(function()
-    game.StarterGui:SetCore("SendNotification", {
-        Title = "Synapse X";
-        Text = "Synapse X v3 coming soon.";
-        Duration = 1;
-    })
-    synapsex3.Text = "Coming soon."
-    wait(1)
-    synapsex3.Text = "Synapse X v3"
-end)
 
 -- Scripts:
 
