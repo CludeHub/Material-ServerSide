@@ -1,7 +1,6 @@
 -- Script By Paul
 -- Server Side Script
 
-
 local ScreenGui = Instance.new("ScreenGui")
 local Executor = Instance.new("Frame")
 local synminbutt = Instance.new("ImageButton")
