@@ -91,8 +91,23 @@ UICorner_3.Parent = Down
 UIAspectRatioConstraint_2.Parent = Down
 UIAspectRatioConstraint_2.AspectRatio = 80.000
 
+ImageLabel.Parent = Executor
+ImageLabel.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Position = UDim2.new(0.0252733715, 0, 0.015625, 27)
+ImageLabel.Size = UDim2.new(0, 541, 0, 246)
+
+security.Name = "security"
+security.Parent = ImageLabel
+security.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+security.Size = UDim2.new(0, 552, 0, 258)
+security.Visible = false
+security.Font = Enum.Font.SourceSans
+security.TextColor3 = Color3.fromRGB(0, 0, 0)
+security.TextSize = 14.000
+
 EditorScroller.Name = "EditorScroller"
-EditorScroller.Parent = Executor
+EditorScroller.Parent = ImageLabel
 EditorScroller.Active = true
 EditorScroller.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 EditorScroller.BorderColor3 = Color3.fromRGB(255, 255, 255)
@@ -210,6 +225,19 @@ Numbers_.TextColor3 = Color3.fromRGB(255, 198, 0)
 Numbers_.TextSize = 15.000
 Numbers_.TextXAlignment = Enum.TextXAlignment.Left
 Numbers_.TextYAlignment = Enum.TextYAlignment.Top
+
+Lines.Name = "Lines"
+Lines.Parent = EditorScroller
+Lines.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Lines.BackgroundTransparency = 1.000
+Lines.Size = UDim2.new(0, 30, 1, 0)
+Lines.ZIndex = 4
+Lines.Font = Enum.Font.Code
+Lines.Text = "1"
+Lines.TextColor3 = Color3.fromRGB(255, 255, 255)
+Lines.TextSize = 15.000
+Lines.TextYAlignment = Enum.TextYAlignment.Top
+
 
 UIAspectRatioConstraint_3.Parent = Editor
 UIAspectRatioConstraint_3.AspectRatio = 1.916
