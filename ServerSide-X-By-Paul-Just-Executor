@@ -1,29 +1,13 @@
--- Server Side script by Paul
--- this server side is level 3
--- dont claim or copy this script!! just make your own gui kid
--- Gui to Lua
+-- Instances:
 
-local ScreenGui = Instance.new("ScreenGui")
-local Executor = Instance.new("Frame")
-local synminbutt = Instance.new("ImageButton")
+local SynapseXreal = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local bar = Instance.new("Frame")
 local Close = Instance.new("TextButton")
-local mini = Instance.new("TextButton")
-local UICorner = Instance.new("UICorner")
-local TopBar = Instance.new("TextLabel")
-local Script = Instance.new("TextButton")
-local Script2 = Instance.new("TextButton")
-local Script3 = Instance.new("TextButton")
-local Script4 = Instance.new("TextButton")
-local Script5 = Instance.new("TextButton")
-local Script6 = Instance.new("TextButton")
-local Script7 = Instance.new("TextButton")
-local UICorner_2 = Instance.new("UICorner")
-local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
-local Down = Instance.new("Frame")
-local UICorner_3 = Instance.new("UICorner")
-local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
-local EditorScroller = Instance.new("ScrollingFrame")
-local Editor = Instance.new("TextBox")
+local ImageLabel = Instance.new("ImageLabel")
+local security = Instance.new("TextLabel")
+local EditorFrame = Instance.new("ScrollingFrame")
+local Source = Instance.new("TextBox")
 local Comments_ = Instance.new("TextLabel")
 local Globals_ = Instance.new("TextLabel")
 local Keywords_ = Instance.new("TextLabel")
@@ -32,66 +16,69 @@ local Strings_ = Instance.new("TextLabel")
 local Tokens_ = Instance.new("TextLabel")
 local Numbers_ = Instance.new("TextLabel")
 local Lines = Instance.new("TextLabel")
-local UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint")
-local UIAspectRatioConstraint_4 = Instance.new("UIAspectRatioConstraint")
-local ScriptTab = Instance.new("Frame")
-local UICorner_4 = Instance.new("UICorner")
-local UIAspectRatioConstraint_5 = Instance.new("UIAspectRatioConstraint")
-local Execute = Instance.new("TextButton")
-local Theme = Instance.new("TextButton")
-local UICorner_5 = Instance.new("UICorner")
-local UIAspectRatioConstraint_6 = Instance.new("UIAspectRatioConstraint")
-local Clear = Instance.new("TextButton")
-local Button = Instance.new("TextButton")
-local Button2 = Instance.new("TextButton")
-local Button3 = Instance.new("TextButton")
-local UICorner_6 = Instance.new("UICorner")
-local UIAspectRatioConstraint_7 = Instance.new("UIAspectRatioConstraint")
-local Save = Instance.new("TextButton")
-local UICorner_7 = Instance.new("UICorner")
-local UIAspectRatioConstraint_8 = Instance.new("UIAspectRatioConstraint")
-local UIAspectRatioConstraint_9 = Instance.new("UIAspectRatioConstraint")
+local title = Instance.new("TextLabel")
+local list = Instance.new("Frame")
+local execute = Instance.new("TextButton")
+local clear = Instance.new("TextButton")
+local scripthub = Instance.new("TextButton")
+local Attach = Instance.new("TextButton")
+local title_2 = Instance.new("ImageLabel")
+local scripthub_2 = Instance.new("Frame")
+local bar_2 = Instance.new("Frame")
+local select = Instance.new("Frame")
+local dex = Instance.new("TextButton")
+local esp = Instance.new("TextButton")
+local spy = Instance.new("TextButton")
+local dumper = Instance.new("TextButton")
+local desc = Instance.new("Frame")
+local descri = Instance.new("TextLabel")
+local title_3 = Instance.new("TextLabel")
+local execute_2 = Instance.new("TextButton")
+local close = Instance.new("TextButton")
+local title_4 = Instance.new("ImageLabel")
+
+local scriptselected = "none"
+local injected = false
 
 --Properties:
 
-ScreenGui.Parent = game.CoreGui
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+SynapseXreal.Name = "Synapse X (real)"
+SynapseXreal.Parent = game.CoreGui
+SynapseXreal.ResetOnSpawn = false
 
-Executor.Name = "Executor"
-Executor.Parent = ScreenGui
-Executor.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-Executor.BorderColor3 = Color3.fromRGB(0, 0, 255)
-Executor.BorderSizePixel = 2
-Executor.Position = UDim2.new(0, 0, 0, 0)
-Executor.Size = UDim2.new(0, 685, 0, 363)
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = SynapseXreal
+MainFrame.Active = true
+MainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+MainFrame.BorderSizePixel = 0
+MainFrame.Position = UDim2.new(0, 0, 0, 0)
+MainFrame.Size = UDim2.new(0, 689, 0, 320)
 
-TopBar.Name = "TopBar"
-TopBar.Parent = Executor
-TopBar.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-TopBar.Size = UDim2.new(0, 481, 0, 35)
-TopBar.Font = Enum.Font.SourceSansItalic
-TopBar.Text = "📜Server Side Executor📜"
-TopBar.TextColor3 = Color3.fromRGB(255, 255, 255)
-TopBar.TextSize = 31.000
+bar.Name = "bar"
+bar.Parent = MainFrame
+bar.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+bar.BackgroundTransparency = 0.800
+bar.BorderSizePixel = 0
+bar.Position = UDim2.new(-0, 0, -0.00296382909, 0)
+bar.Size = UDim2.new(0, 689, 0, 25)
 
-UICorner.Parent = Executor
+Close.Name = "Close"
+Close.Parent = bar
+Close.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Close.BackgroundTransparency = 1.000
+Close.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Close.BorderSizePixel = 0
+Close.Position = UDim2.new(0.969521046, 0, 0, 0)
+Close.Size = UDim2.new(0, 21, 0, 25)
+Close.Font = Enum.Font.Arial
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+Close.TextSize = 14.000
+Close.MouseButton1Click:Connect(function()
+    SynapseXreal:Destroy()
+end)
 
-UICorner_2.Parent = TopBar
-
-UIAspectRatioConstraint.Parent = TopBar
-UIAspectRatioConstraint.AspectRatio = 13.743
-Down.Name = "Down"
-Down.Parent = Executor
-Down.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
-Down.Position = UDim2.new(0, 0, 0, 281)
-Down.Size = UDim2.new(0, 480, 0, 6)
-
-UICorner_3.Parent = Down
-
-UIAspectRatioConstraint_2.Parent = Down
-UIAspectRatioConstraint_2.AspectRatio = 80.000
-
-ImageLabel.Parent = Executor
+ImageLabel.Parent = MainFrame
 ImageLabel.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 ImageLabel.BorderSizePixel = 0
 ImageLabel.Position = UDim2.new(0.0252733715, 0, 0.015625, 27)
@@ -106,37 +93,39 @@ security.Font = Enum.Font.SourceSans
 security.TextColor3 = Color3.fromRGB(0, 0, 0)
 security.TextSize = 14.000
 
-EditorScroller.Name = "EditorScroller"
-EditorScroller.Parent = ImageLabel
-EditorScroller.Active = true
-EditorScroller.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-EditorScroller.BorderColor3 = Color3.fromRGB(255, 255, 255)
-EditorScroller.BorderSizePixel = 1
-EditorScroller.Position = UDim2.new(0, 9, 0, 47)
-EditorScroller.Size = UDim2.new(0, 469, 0, 320)
-EditorScroller.ScrollBarThickness = 3
-EditorScroller.AutomaticCanvasSize = "XY"
+EditorFrame.Name = "EditorFrame"
+EditorFrame.Parent = ImageLabel
+EditorFrame.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+EditorFrame.BackgroundTransparency = 1.000
+EditorFrame.BorderColor3 = Color3.fromRGB(61, 61, 61)
+EditorFrame.Size = UDim2.new(1, 0, 1, 0)
+EditorFrame.ZIndex = 3
+EditorFrame.BottomImage = "rbxassetid://148970562"
+EditorFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
+EditorFrame.HorizontalScrollBarInset = Enum.ScrollBarInset.ScrollBar
+EditorFrame.MidImage = "rbxassetid://148970562"
+EditorFrame.ScrollBarThickness = 5
+EditorFrame.TopImage = "rbxassetid://148970562"
 
-Editor.Name = "Editor"
-Editor.Parent = EditorScroller
-Editor.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-Editor.BorderColor3 = Color3.fromRGB(0, 0, 255)
-Editor.BorderSizePixel = 1
-Editor.Size = UDim2.new(0, 500, 0, 260)
-Editor.PlaceholderColor3 = Color3.fromRGB(187,173,161)
-Editor.PlaceholderText = "print 'Hello World' "
-Editor.ClearTextOnFocus = false
-Editor.Font = Enum.Font.SourceSans
-Editor.MultiLine = true
-Editor.Text = ""
-Editor.TextColor3 = Color3.fromRGB(255, 255, 255)
-Editor.TextSize = 17.000
-Editor.TextXAlignment = Enum.TextXAlignment.Left
-Editor.TextYAlignment = Enum.TextYAlignment.Top
-Editor.AutomaticSize = "XY"
+Source.Name = "Source"
+Source.Parent = EditorFrame
+Source.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+Source.BackgroundTransparency = 1.000
+Source.Position = UDim2.new(0, 30, 0, 0)
+Source.Size = UDim2.new(0.945652187, 0, 1, 0)
+Source.ZIndex = 3
+Source.ClearTextOnFocus = false
+Source.Font = Enum.Font.Code
+Source.MultiLine = true
+Source.PlaceholderColor3 = Color3.fromRGB(204, 204, 204)
+Source.Text = ""
+Source.TextColor3 = Color3.fromRGB(204, 204, 204)
+Source.TextSize = 15.000
+Source.TextXAlignment = Enum.TextXAlignment.Left
+Source.TextYAlignment = Enum.TextYAlignment.Top
 
 Comments_.Name = "Comments_"
-Comments_.Parent = Editor
+Comments_.Parent = Source
 Comments_.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Comments_.BackgroundTransparency = 1.000
 Comments_.Size = UDim2.new(1, 0, 1, 0)
@@ -149,7 +138,7 @@ Comments_.TextXAlignment = Enum.TextXAlignment.Left
 Comments_.TextYAlignment = Enum.TextYAlignment.Top
 
 Globals_.Name = "Globals_"
-Globals_.Parent = Editor
+Globals_.Parent = Source
 Globals_.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Globals_.BackgroundTransparency = 1.000
 Globals_.Size = UDim2.new(1, 0, 1, 0)
@@ -162,7 +151,7 @@ Globals_.TextXAlignment = Enum.TextXAlignment.Left
 Globals_.TextYAlignment = Enum.TextYAlignment.Top
 
 Keywords_.Name = "Keywords_"
-Keywords_.Parent = Editor
+Keywords_.Parent = Source
 Keywords_.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Keywords_.BackgroundTransparency = 1.000
 Keywords_.Size = UDim2.new(1, 0, 1, 0)
@@ -175,7 +164,7 @@ Keywords_.TextXAlignment = Enum.TextXAlignment.Left
 Keywords_.TextYAlignment = Enum.TextYAlignment.Top
 
 RemoteHighlight_.Name = "RemoteHighlight_"
-RemoteHighlight_.Parent = Editor
+RemoteHighlight_.Parent = Source
 RemoteHighlight_.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 RemoteHighlight_.BackgroundTransparency = 1.000
 RemoteHighlight_.Size = UDim2.new(1, 0, 1, 0)
@@ -188,7 +177,7 @@ RemoteHighlight_.TextXAlignment = Enum.TextXAlignment.Left
 RemoteHighlight_.TextYAlignment = Enum.TextYAlignment.Top
 
 Strings_.Name = "Strings_"
-Strings_.Parent = Editor
+Strings_.Parent = Source
 Strings_.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Strings_.BackgroundTransparency = 1.000
 Strings_.Size = UDim2.new(1, 0, 1, 0)
@@ -201,7 +190,7 @@ Strings_.TextXAlignment = Enum.TextXAlignment.Left
 Strings_.TextYAlignment = Enum.TextYAlignment.Top
 
 Tokens_.Name = "Tokens_"
-Tokens_.Parent = Editor
+Tokens_.Parent = Source
 Tokens_.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Tokens_.BackgroundTransparency = 1.000
 Tokens_.Size = UDim2.new(1, 0, 1, 0)
@@ -214,7 +203,7 @@ Tokens_.TextXAlignment = Enum.TextXAlignment.Left
 Tokens_.TextYAlignment = Enum.TextYAlignment.Top
 
 Numbers_.Name = "Numbers_"
-Numbers_.Parent = Editor
+Numbers_.Parent = Source
 Numbers_.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Numbers_.BackgroundTransparency = 1.000
 Numbers_.Size = UDim2.new(1, 0, 1, 0)
@@ -227,7 +216,7 @@ Numbers_.TextXAlignment = Enum.TextXAlignment.Left
 Numbers_.TextYAlignment = Enum.TextYAlignment.Top
 
 Lines.Name = "Lines"
-Lines.Parent = EditorScroller
+Lines.Parent = EditorFrame
 Lines.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Lines.BackgroundTransparency = 1.000
 Lines.Size = UDim2.new(0, 30, 1, 0)
@@ -238,308 +227,324 @@ Lines.TextColor3 = Color3.fromRGB(255, 255, 255)
 Lines.TextSize = 15.000
 Lines.TextYAlignment = Enum.TextYAlignment.Top
 
+title.Name = "title"
+title.Parent = MainFrame
+title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+title.BackgroundTransparency = 1.000
+title.Position = UDim2.new(0.330062926, 0, 0.00625000056, 0)
+title.Size = UDim2.new(0, 200, 0, 22)
+title.Font = Enum.Font.SourceSans
+title.Text = "Synapse X Made By Paul"
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.TextSize = 16.000
 
-UIAspectRatioConstraint_3.Parent = Editor
-UIAspectRatioConstraint_3.AspectRatio = 1.916
+list.Name = "list"
+list.Parent = MainFrame
+list.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+list.BorderSizePixel = 0
+list.Position = UDim2.new(0.820970535, 0, 0.100000001, 0)
+list.Size = UDim2.new(0, 114, 0, 246)
 
-UIAspectRatioConstraint_4.Parent = EditorScroller
-UIAspectRatioConstraint_4.AspectRatio = 1.921
-
-Theme.Name = "Theme"
-Theme.Parent = Executor
-Theme.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-Theme.BorderColor3 = Color3.fromRGB(255, 255, 255)
-Theme.BorderSizePixel = 1
-Theme.Position = UDim2.new(0, 10, 0, 300)
-Theme.Size = UDim2.new(0, 106, 0, 27)
-Theme.Font = Enum.Font.SourceSans
-Theme.Text = "Execute"
-Theme.TextColor3 = Color3.fromRGB(255, 255, 255)
-Theme.TextSize = 20.000
-
-Execute.Name = "Execute"
-Execute.Parent = Executor
-Execute.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-Execute.Position = UDim2.new(0, 10, 0, 300)
-Execute.Size = UDim2.new(0, 106, 0, 27)
-Execute.Font = Enum.Font.SourceSans
-Execute.Text = "Execute📜"
-Execute.TextColor3 = Color3.fromRGB(255, 255, 255)
-Execute.TextSize = 20.000
-
-UICorner_5.Parent = Execute
-
-UIAspectRatioConstraint_6.Parent = Execute
-UIAspectRatioConstraint_6.AspectRatio = 4.080
-
-Button.Name = "Button"
-Button.Parent = Executor
-Button.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-Button.BorderColor3 = Color3.fromRGB(255, 255, 255)
-Button.BorderSizePixel = 1
-Button.Position = UDim2.new(0, 108, 0, 300)
-Button.Size = UDim2.new(0, 105, 0, 27)
-Button.Font = Enum.Font.SourceSans
-Button.Text = "Clear🧹"
-Button.TextColor3 = Color3.fromRGB(255, 255, 255)
-Button.TextSize = 20.000
-
-Clear.Name = "Clear"
-Clear.Parent = Executor
-Clear.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-Clear.BorderColor3 = Color3.fromRGB(255, 255, 255)
-Clear.BorderSizePixel = 1
-Clear.Position = UDim2.new(0, 108, 0, 300)
-Clear.Size = UDim2.new(0, 105, 0, 27)
-Clear.Font = Enum.Font.SourceSans
-Clear.Text = "Clear🧹"
-Clear.TextColor3 = Color3.fromRGB(255, 255, 255)
-Clear.TextSize = 20.000
-
-UICorner_6.Parent = Clear
-
-UIAspectRatioConstraint_7.Parent = Clear
-UIAspectRatioConstraint_7.AspectRatio = 4.080
-
-UICorner_7.Parent = Save
-
-UIAspectRatioConstraint_8.Parent = Save
-UIAspectRatioConstraint_8.AspectRatio = 4.080
-
-UIAspectRatioConstraint_9.Parent = Executor
-UIAspectRatioConstraint_9.AspectRatio = 1.676
-
-Button2.Name = "Button2"
-Button2.Parent = Executor
-Button2.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-Button2.BorderColor3 = Color3.fromRGB(255, 255, 255)
-Button2.BorderSizePixel = 1
-Button2.Position = UDim2.new(0, 208, 0, 300)
-Button2.Size = UDim2.new(0, 105, 0, 27)
-Button2.Font = Enum.Font.SourceSans
-Button2.Text = "Infinite Yield☑️"
-Button2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Button2.TextSize = 18.000
-Button2.MouseButton1Down:connect(function()
-loadstring(game:HttpGet("https://scriptblox.com/raw/Infinite-Yield_500"))()
-end)
-Button3.Name = "Button3"
-Button3.Parent = Executor
-Button3.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-Button3.BorderColor3 = Color3.fromRGB(255, 255, 255)
-Button3.BorderSizePixel = 1
-Button3.Position = UDim2.new(0, 315, 0, 300)
-Button3.Size = UDim2.new(0, 100, 0, 27)
-Button3.Font = Enum.Font.SourceSans
-Button3.Text = " R6"
-Button3.TextColor3 = Color3.fromRGB(255, 255, 255)
-Button3.TextSize = 20.000
-Button3.MouseButton1Down:connect(function()
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/Imagnir/r6_anims_for_r15/main/r6_anims.lua'),true))()
-end)
-synminbutt.Name = "synminbutt"
-synminbutt.Parent = Executor
-synminbutt.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-synminbutt.BorderColor3 = Color3.fromRGB(25, 25, 25)
-synminbutt.BorderSizePixel = 2
-synminbutt.Position = UDim2.new(0, 479, 0, 170)
-synminbutt.Size = UDim2.new(0, 125, 0, 125)
-synminbutt.Visible = true
-synminbutt.ZIndex = 14
-synminbutt.Image = "http://www.roblox.com/asset/?id=11588317701"
-synminbutt.ImageRectSize = Vector2.new(330, 410)
-synminbutt.MouseButton1Click:Connect(function()
-    MainFrame.Visible = true
-    synminbutt.Visible = true
-end)
-Close.Name = "Close"
-Close.Parent = Executor
-Close.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-Close.BorderColor3 = Color3.fromRGB(25, 25, 25)
-Close.BorderSizePixel = 1
-Close.Position = UDim2.new(0, 576, 0, 1)
-Close.Size = UDim2.new(0, 30, 0, 27)
-Close.Font = Enum.Font.SourceSans
-Close.Text = "x"
-Close.TextColor3 = Color3.fromRGB(255, 255, 255)
-Close.TextSize = 24.000
-Close.MouseButton1Down:connect(function()
-ScreenGui:Destroy()
-end)
-mini.Name = "mini"
-mini.Parent = Executor
-mini.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-mini.BorderColor3 = Color3.fromRGB(25, 25, 25)
-mini.BorderSizePixel = 1
-mini.Position = UDim2.new(0, 550, 0, 0)
-mini.Size = UDim2.new(0, 28, 0, 20)
-mini.Font = Enum.Font.SourceSans
-mini.Text = ""
-mini.TextColor3 = Color3.fromRGB(255, 255, 255)
-mini.TextSize = 24.000
-mini.MouseButton1Down:connect(function()
-game.StarterGui:SetCore("SendNotification", {
-        Title = "Server Side";
-        Text = "Server Side minimized.";
-        Duration = 3;
-    })
-    synminbutt.Visible = true
-    MainFrame.Visible = false
-end)
-Script.Name = "Script"
-Script.Parent = Executor
-Script.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-Script.BorderColor3 = Color3.fromRGB(255, 255, 255)
-Script.BorderSizePixel = 1
-Script.Position = UDim2.new(0, 479, 0, 48)
-Script.Size = UDim2.new(0, 54, 0, 27)
-Script.Font = Enum.Font.SourceSans
-Script.Text = "Hack1📜"
-Script.TextColor3 = Color3.fromRGB(255, 255, 255)
-Script.TextSize = 18.000
-Script.MouseButton1Down:connect(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/Clude-Gui-Hack-/main/CludeGui0292827363638392910182736525141712020282272625252618191927363544929192827262524291828272737363738292822726535010012837376542627220827627373377364919172532918264493027161538392817265235494018176638291928463516299472615293396252649291725463618193847261364892826352617293937266139486261528339918263635272110293873265515162633738494050018171654464381928373661193736622929373652220473518935529237352629363892353519928365425171830836252525372918253526181726262726257282299239636728162622948362628363286292917526483012762545566780018262439219363569928273637292"))()
-end)
-Script2.Name = "Script2"
-Script2.Parent = Executor
-Script2.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-Script2.BorderColor3 = Color3.fromRGB(255, 255, 255)
-Script2.BorderSizePixel = 1
-Script2.Position = UDim2.new(0, 537, 0, 50)
-Script2.Size = UDim2.new(0, 54, 0, 27)
-Script2.Font = Enum.Font.SourceSans
-Script2.Text = "Hack2📜"
-Script2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Script2.TextSize = 18.000
-Script2.MouseButton1Down:connect(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/sinret/rbxscript.com-scripts-reuploads-/main/ckid"))()
-end)
-Script3.Name = "Script3"
-Script3.Parent = Executor
-Script3.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-Script3.BorderColor3 = Color3.fromRGB(255, 255, 255)
-Script3.BorderSizePixel = 1
-Script3.Position = UDim2.new(0, 479, 0, 80)
-Script3.Size = UDim2.new(0, 54, 0, 27)
-Script3.Font = Enum.Font.SourceSans
-Script3.Text = "Hack3📜"
-Script3.TextColor3 = Color3.fromRGB(255, 255, 255)
-Script3.TextSize = 18.000
-Script3.MouseButton1Down:connect(function()
-loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-F3x-Remote-Replicator-Script-7849"))()
-end)
-Script4.Name = "Script4"
-Script4.Parent = Executor
-Script4.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-Script4.BorderColor3 = Color3.fromRGB(255, 255, 255)
-Script4.BorderSizePixel = 1
-Script4.Position = UDim2.new(0, 537, 0, 80)
-Script4.Size = UDim2.new(0, 54, 0, 27)
-Script4.Font = Enum.Font.SourceSans
-Script4.Text = "Hack4📜"
-Script4.TextColor3 = Color3.fromRGB(255, 255, 255)
-Script4.TextSize = 18.000
-Script4.MouseButton1Down:connect(function()
-loadstring(game:HttpGet("https://pastebin.com/raw/6FGvHq4N"))()
-end)
-Script5.Name = "Script5"
-Script5.Parent = Executor
-Script5.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-Script5.BorderColor3 = Color3.fromRGB(255, 255, 255)
-Script5.BorderSizePixel = 1
-Script5.Position = UDim2.new(0, 479, 0, 110)
-Script5.Size = UDim2.new(0, 54, 0, 27)
-Script5.Font = Enum.Font.SourceSans
-Script5.Text = "Hack5📜"
-Script5.TextColor3 = Color3.fromRGB(255, 255, 255)
-Script5.TextSize = 18.000
-Script5.MouseButton1Down:connect(function()
-loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\103\48\48\108\88\112\108\111\105\116\101\114\47\103\48\48\108\88\112\108\111\105\116\101\114\47\109\97\105\110\47\70\101\37\50\48\98\121\112\97\115\115\34\44\32\116\114\117\101\41\41\40\41\10")()
-end)
-Script6.Name = "Script6"
-Script6.Parent = Executor
-Script6.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-Script6.BorderColor3 = Color3.fromRGB(255, 255, 255)
-Script6.BorderSizePixel = 1
-Script6.Position = UDim2.new(0, 536, 0, 110)
-Script6.Size = UDim2.new(0, 54, 0, 27)
-Script6.Font = Enum.Font.SourceSans
-Script6.Text = "Hack6📜"
-Script6.TextColor3 = Color3.fromRGB(255, 255, 255)
-Script6.TextSize = 18.000
-Script6.MouseButton1Down:connect(function()
-loadstring(game:GetObjects("rbxassetid://11801763945")[1].Source)()
-end)
-Script7.Name = "Script7"
-Script7.Parent = Executor
-Script7.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-Script7.BorderColor3 = Color3.fromRGB(255, 255, 255)
-Script7.BorderSizePixel = 1
-Script7.Position = UDim2.new(0, 479, 0, 140)
-Script7.Size = UDim2.new(0, 54, 0, 27)
-Script7.Font = Enum.Font.SourceSans
-Script7.Text = "Hack7📜"
-Script7.TextColor3 = Color3.fromRGB(255, 255, 255)
-Script7.TextSize = 18.000
-Script7.MouseButton1Down:connect(function()
-loadstring(game:HttpGet("https://pastebin.com/raw/SsZE7WAz"))()
-end)
--- Scripts:
-
-local function QDVHE_fake_script() -- Execute.LocalScript 
-	local script = Instance.new('LocalScript', Execute)
-
-	local execute = script.Parent
-	Editor = script.Parent.Parent.EditorScroller.Editor
-
-	execute.MouseButton1Click:Connect(
-		function()
-			assert(loadstring(Editor.Text))()
-		end
-	)
-
-end
-coroutine.wrap(QDVHE_fake_script)()
-local function MLYQ_fake_script() -- Clear.LocalScript 
-	local script = Instance.new('LocalScript', Clear)
-
-	Clear = script.Parent
-	Clear.MouseButton1Click:Connect(function()
-		script.Parent.Parent.EditorScroller.Editor.Text = ""
-	end)
-end
-coroutine.wrap(MLYQ_fake_script)()
-local function ORCKN_fake_script() -- Executor.LocalScript 
-	local script = Instance.new('LocalScript', Executor)
-
-	script.Parent.Active = true
-	script.Parent.Draggable = true
-	script.Parent.Parent.ResetOnSpawn = false
-end
-coroutine.wrap(ORCKN_fake_script)()
-local function JPWI_fake_script() -- Executor.LocalScript 
-	local script = Instance.new('LocalScript', Executor)
-
-	script.Parent:TweenPosition(UDim2.new(0.308, 0,0.262, 0), "Out", "Quint",1,true)
-end
-coroutine.wrap(JPWI_fake_script)()
-
--- Scripts:
-
-game:GetService("UserInputService").InputBegan:Connect(function (input)
-    if MainFrame.Visible == false and synminbutt.Visible == false then
-        if (input.KeyCode == Enum.KeyCode.F6) then
-            MainFrame.Visible = not MainFrame.Visible
-        end
+execute.Name = "execute"
+execute.Parent = MainFrame
+execute.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+execute.BackgroundTransparency = 0.800
+execute.BorderSizePixel = 0
+execute.Position = UDim2.new(0.0095389355, 0, 0.887499988, 0)
+execute.Size = UDim2.new(0, 92, 0, 30)
+execute.Font = Enum.Font.Arial
+execute.Text = "Execute"
+execute.TextColor3 = Color3.fromRGB(255, 255, 255)
+execute.TextSize = 14.000
+execute.MouseButton1Click:Connect(function()
+    if injected == true then
+        loadstring(Source.Text)()
+    end
+    if injected == false then
+        title.Text = "Synapse X - v2.19.6b (not injected! press attach)"
     end
 end)
+
+clear.Name = "clear"
+clear.Parent = MainFrame
+clear.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+clear.BackgroundTransparency = 0.800
+clear.BorderSizePixel = 0
+clear.Position = UDim2.new(0.154146105, 0, 0.887499988, 0)
+clear.Size = UDim2.new(0, 84, 0, 30)
+clear.Font = Enum.Font.Arial
+clear.Text = "Clear"
+clear.TextColor3 = Color3.fromRGB(255, 255, 255)
+clear.TextSize = 14.000
+clear.MouseButton1Click:Connect(function()
+    Source.Text = ""
+end)
+
+scripthub.Name = "scripthub"
+scripthub.Parent = MainFrame
+scripthub.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+scripthub.BackgroundTransparency = 0.800
+scripthub.BorderSizePixel = 0
+scripthub.Position = UDim2.new(0.871768773, 0, 0.887499988, 0)
+scripthub.Size = UDim2.new(0, 79, 0, 30)
+scripthub.Font = Enum.Font.Arial
+scripthub.Text = "Script Hub"
+scripthub.TextColor3 = Color3.fromRGB(255, 255, 255)
+scripthub.TextSize = 14.000
+scripthub.MouseButton1Click:Connect(function()
+    scripthub_2.Visible = true
+end)
+
+Attach.Name = "Attach"
+Attach.Parent = MainFrame
+Attach.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+Attach.BackgroundTransparency = 0.800
+Attach.BorderSizePixel = 0
+Attach.Position = UDim2.new(0.741144657, 0, 0.887499988, 0)
+Attach.Size = UDim2.new(0, 84, 0, 30)
+Attach.Font = Enum.Font.Arial
+Attach.Text = "Attach"
+Attach.TextColor3 = Color3.fromRGB(255, 255, 255)
+Attach.TextSize = 14.000
+Attach.MouseButton1Click:Connect(function()
+    print("hi")
+    if injected == true then
+        title.Text = "Synapse X - v2.19.6b (already injected!)"
+        wait(1)
+        title.Text = "Synapse X - v2.19.6b"
+    end
+    if injected == false then
+        title.Text = "Synapse X - v2.19.6b (checking...)"
+        wait(0.1)
+        title.Text = "Synapse X - v2.19.6b (injecting...)"
+        wait(1.5)
+        setfpscap(1)
+        wait(1)
+        setfpscap(6969)
+        title.Text = "Synapse X - v2.19.6b (checking whitelist...)"
+        wait(0.8)
+        title.Text = "Synapse X - v2.19.6b (scanning...)"
+        wait(0.3)
+        title.Text = "Synapse X - v2.19.6b (ready!)"
+        wait(0.5)
+        title.Text = "Synapse X - v2.19.6b"
+        injected = true
+    end
+end)
+
+title_2.Name = "title"
+title_2.Parent = MainFrame
+title_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+title_2.BackgroundTransparency = 1.000
+title_2.Position = UDim2.new(0.00870821718, 0, 0, 0)
+title_2.Size = UDim2.new(0, 18, 0, 24)
+title_2.ZIndex = 14
+title_2.Image = "http://www.roblox.com/asset/?id=7641125882"
+title_2.ImageRectSize = Vector2.new(138, 167)
+
+scripthub_2.Name = "scripthub"
+scripthub_2.Parent = SynapseXreal
+scripthub_2.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+scripthub_2.BorderSizePixel = 0
+scripthub_2.Position = UDim2.new(0.433135211, 0, 0.502979755, 0)
+scripthub_2.Size = UDim2.new(0, 290, 0, 305)
+scripthub_2.Visible = false
+scripthub_2.ZIndex = 100
+
+bar_2.Name = "bar"
+bar_2.Parent = scripthub_2
+bar_2.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+bar_2.BackgroundTransparency = 0.800
+bar_2.BorderSizePixel = 0
+bar_2.Position = UDim2.new(0, 0, -0.0029638072, 0)
+bar_2.Size = UDim2.new(0, 290, 0, 25)
+
+select.Name = "select"
+select.Parent = scripthub_2
+select.BackgroundColor3 = Color3.fromRGB(21, 21, 21)
+select.BorderSizePixel = 0
+select.Position = UDim2.new(0.0299979374, 0, 0.104918033, 0)
+select.Size = UDim2.new(0, 82, 0, 264)
+select.ZIndex = 110
+
+dex.Name = "dex"
+dex.Parent = select
+dex.BackgroundColor3 = Color3.fromRGB(0, 32, 61)
+dex.BackgroundTransparency = 1.000
+dex.BorderColor3 = Color3.fromRGB(0, 0, 49)
+dex.BorderSizePixel = 0
+dex.Position = UDim2.new(0.0121960752, 0, -1.49011612e-08, 0)
+dex.Size = UDim2.new(0, 80, 0, 18)
+dex.Font = Enum.Font.SourceSans
+dex.Text = " Dark Dex"
+dex.TextColor3 = Color3.fromRGB(255, 255, 255)
+dex.TextSize = 14.000
+dex.TextXAlignment = Enum.TextXAlignment.Left
+dex.ZIndex = 110
+dex.MouseButton1Click:Connect(function()
+    scriptselected = "dex"
+end)
+
+esp.Name = "esp"
+esp.Parent = select
+esp.BackgroundColor3 = Color3.fromRGB(0, 32, 61)
+esp.BackgroundTransparency = 1.000
+esp.BorderColor3 = Color3.fromRGB(0, 0, 49)
+esp.BorderSizePixel = 0
+esp.Position = UDim2.new(0.0121960752, 0, 0.0681818053, 0)
+esp.Size = UDim2.new(0, 80, 0, 18)
+esp.Font = Enum.Font.SourceSans
+esp.Text = " Unnamed ESP"
+esp.TextColor3 = Color3.fromRGB(255, 255, 255)
+esp.TextSize = 14.000
+esp.TextXAlignment = Enum.TextXAlignment.Left
+esp.ZIndex = 110
+esp.MouseButton1Click:Connect(function()
+    scriptselected = "esp"
+end)
+
+spy.Name = "spy"
+spy.Parent = select
+spy.BackgroundColor3 = Color3.fromRGB(0, 32, 61)
+spy.BackgroundTransparency = 1.000
+spy.BorderColor3 = Color3.fromRGB(0, 0, 49)
+spy.BorderSizePixel = 0
+spy.Position = UDim2.new(0.0121960752, 0, 0.136363626, 0)
+spy.Size = UDim2.new(0, 80, 0, 18)
+spy.Font = Enum.Font.SourceSans
+spy.Text = " Remote Spy"
+spy.TextColor3 = Color3.fromRGB(255, 255, 255)
+spy.TextSize = 14.000
+spy.TextXAlignment = Enum.TextXAlignment.Left
+spy.ZIndex = 110
+spy.MouseButton1Click:Connect(function()
+    scriptselected = "spy"
+end)
+
+dumper.Name = "dumper"
+dumper.Parent = select
+dumper.BackgroundColor3 = Color3.fromRGB(0, 32, 61)
+dumper.BackgroundTransparency = 1.000
+dumper.BorderColor3 = Color3.fromRGB(0, 0, 49)
+dumper.BorderSizePixel = 0
+dumper.Position = UDim2.new(0.0121960752, 0, 0.204545438, 0)
+dumper.Size = UDim2.new(0, 80, 0, 18)
+dumper.Font = Enum.Font.SourceSans
+dumper.Text = " SaveInstance"
+dumper.TextColor3 = Color3.fromRGB(255, 255, 255)
+dumper.TextSize = 14.000
+dumper.TextXAlignment = Enum.TextXAlignment.Left
+dumper.ZIndex = 110
+dumper.MouseButton1Click:Connect(function()
+    scriptselected = "dumper"
+end)
+
+desc.Name = "desc"
+desc.Parent = scripthub_2
+desc.BackgroundColor3 = Color3.fromRGB(21, 21, 21)
+desc.BorderSizePixel = 0
+desc.Position = UDim2.new(0.340342641, 0, 0.613114715, 0)
+desc.Size = UDim2.new(0, 184, 0, 69)
+desc.ZIndex = 110
+
+descri.Name = "descri"
+descri.Parent = desc
+descri.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+descri.BackgroundTransparency = 1.000
+descri.BorderSizePixel = 0
+descri.Position = UDim2.new(0.0112334546, 0, 0, 0)
+descri.Size = UDim2.new(0, 181, 0, 69)
+descri.Font = Enum.Font.SourceSans
+descri.Text = ""
+descri.TextColor3 = Color3.fromRGB(255, 255, 255)
+descri.TextSize = 15.000
+descri.TextWrapped = true
+descri.TextXAlignment = Enum.TextXAlignment.Left
+descri.TextYAlignment = Enum.TextYAlignment.Top
+descri.ZIndex = 125
+
+title_3.Name = "title"
+title_3.Parent = scripthub_2
+title_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+title_3.BackgroundTransparency = 1.000
+title_3.Position = UDim2.new(0.161097407, 0, -0.000307376496, 0)
+title_3.Size = UDim2.new(0, 200, 0, 22)
+title_3.Font = Enum.Font.SourceSans
+title_3.Text = "Synapse X - Script Hub"
+title_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+title_3.TextSize = 16.000
+title_3.ZIndex = 110
+
+execute_2.Name = "execute"
+execute_2.Parent = scripthub_2
+execute_2.BackgroundColor3 = Color3.fromRGB(104, 104, 104)
+execute_2.BackgroundTransparency = 0.800
+execute_2.BorderSizePixel = 0
+execute_2.Position = UDim2.new(0.34057343, 0, 0.871106505, 0)
+execute_2.Size = UDim2.new(0, 92, 0, 30)
+execute_2.Font = Enum.Font.Arial
+execute_2.Text = "Execute"
+execute_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+execute_2.TextSize = 14.000
+execute_2.ZIndex = 110
+execute_2.MouseButton1Click:Connect(function()
+    if injected == true then
+        if scriptselected == "dex" then
+            loadstring(game:HttpGet("https://pastebin.com/raw/J8AX35Fg"))()
+        end
+        if scriptselected == "spy" then
+            loadstring(game:HttpGet("https://pastebin.com/raw/u62hTuwR"))()
+        end
+        if scriptselected == "dumper" then
+            saveinstance()
+        end
+        if scriptselected == "esp" then
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua"))()
+        end
+        if scriptselected == "none" then
+        end
+    end
+    if injected == false then
+        execute_2.Text = "Not Attached!"
+        wait(1)
+        execute_2.Text = "Execute"
+    end
+end)
+
+close.Name = "close"
+close.Parent = scripthub_2
+close.BackgroundColor3 = Color3.fromRGB(104, 104, 104)
+close.BackgroundTransparency = 0.800
+close.BorderSizePixel = 0
+close.Position = UDim2.new(0.685180664, 0, 0.871106505, 0)
+close.Size = UDim2.new(0, 84, 0, 30)
+close.Font = Enum.Font.Arial
+close.Text = "Close"
+close.TextColor3 = Color3.fromRGB(255, 255, 255)
+close.TextSize = 14.000
+close.ZIndex = 110
+close.MouseButton1Click:Connect(function()
+    scriptselected = "none"
+    scripthub_2.Visible = false
+end)
+
+title_4.Name = "title"
+title_4.Parent = scripthub_2
+title_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+title_4.BackgroundTransparency = 1.000
+title_4.Position = UDim2.new(0.00870821718, 0, 0, 0)
+title_4.Size = UDim2.new(0, 18, 0, 24)
+title_4.ZIndex = 110
+title_4.Image = "http://www.roblox.com/asset/?id=7641125882"
+title_4.ImageRectSize = Vector2.new(138, 167)
+
+-- Scripts:
 
 local function SYHNK_fake_script() -- ImageLabel.LocalScript 
     local script = Instance.new('LocalScript', ImageLabel)
     local lua_keywords = {"and", "break", "do", "else", "elseif", "end", "false", "for", "function", "goto", "if", "in", "local", "nil", "not", "or", "repeat", "return", "then", "true", "until", "while"}
-    local global_env = {"getrawmetatable", "game", "workspace", "script", "math", "string", "table", "print", "wait", "BrickColor", "Color3", "next", "pairs", "ipairs", "select", "unpack", "Instance", "Vector2", "Vector3", "CFrame", "Ray", "UDim2", "Enum", "assert", "error", "warn", "tick", "loadstring", "_G", "shared", "getfenv", "setfenv", "newproxy", "setmetatable", "getmetatable", "os", "debug", "pcall", "ypcall", "xpcall", "rawequal", "rawset", "rawget", "tonumber", "tostring", "type", "typeof", "_VERSION", "coroutine", "delay", "require", "spawn", "LoadLibrary", "settings", "stats", "time", "UserSettings", "version", "Axes", "ColorSequence", "Faces", "ColorSequenceKeypoint", "NumberRange", "NumberSequence", "NumberSequenceKeypoint", "gcinfo", "elapsedTime", "collectgarbage", "PhysicalProperties", "Rect", "Region3", "Region3int16", "UDim", "Vector2int16", "Vector3int16"}
+    local global_env = {"getrawmetatable", "game", "workspace", "script", "math", "string", "table", "print", "wait", "BrickColor", "Color3", "next", "pairs", "ipairs", "select", "unpack", "Instance", "Vector2", "Vector3", "CFrame", "Ray", "UDim2", "Enum", "assert", "error", "warn", "tick", "loadstring", "_G", "shared", "getfenv", "setfenv", "newproxy", "setmetatable", "getmetatable", "os", "debug", "pcall", "ypcall", "xpcall", "rawequal", "rawset", "rawget", "tonumber", "tostring", "type", "typeof", "_VERSION", "coroutine", "delay", "require", "spawn", "LoadLibrary", "settings", "stats", "time", "UserSettings", "version", "Axes", "ColorSequence", "Faces", "ColorSequenceKeypoint", "NumberRange", "NumberSequence", "NumberSequenceKeypoint", "gcinfo", "elapsedTime", "collectgarbage", "PhysicalProperties", "Rect", "Region3", "Region3int16", "UDim", "Vector2int16", "Vector3int16, loadstring, kick, Http, screen, gui, exe, execute"}
     local Source = script.Parent.EditorFrame.Source
-    local scrollframe = script.Parent.EditorFrame
     local Lines = Source.Parent.Lines
     local Highlight = function(string, keywords)
         local K = {}
@@ -700,318 +705,8 @@ local function SYHNK_fake_script() -- ImageLabel.LocalScript
     end
     highlight_source("Text")
     Source.Changed:Connect(highlight_source)
-    Source:GetPropertyChangedSignal("Text"):Connect(function()
-        local count = 1
-
-        Source.Text:gsub("\n", function()
-			count = count + 1
-		end)
-        scrollframe.CanvasSize = UDim2.new(0, 1500, count/16.6, 0)
-        Source.Size = UDim2.new(0, 598, 0, 249 + (count > 16 and 16*(count-16) or 0))
-    end)
 end
 coroutine.wrap(SYHNK_fake_script)()
-local function AMNA_fake_script() -- MainFrame.Dragging 
-    local script = Instance.new('LocalScript', MainFrame)
-
-    local UserInputService = game:GetService("UserInputService")
-
-    local gui = script.Parent
-
-    local dragging
-    local dragInput
-    local dragStart
-    local startPos
-
-    local function update(input)
-        local delta = input.Position - dragStart
-        gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-    end
-
-    gui.InputBegan:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-            dragging = true
-            dragStart = input.Position
-            startPos = gui.Position
-
-            input.Changed:Connect(function()
-                if input.UserInputState == Enum.UserInputState.End then
-                    dragging = false
-                end
-            end)
-        end
-    end)
-
-    gui.InputChanged:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-            dragInput = input
-        end
-    end)
-
-    UserInputService.InputChanged:Connect(function(input)
-        if input == dragInput and dragging then
-            update(input)
-        end
-    end)
-end
-coroutine.wrap(AMNA_fake_script)()
-local function VEUJFP_fake_script() -- scripthub_2.Dragging 
-    local script = Instance.new('LocalScript', scripthub_2)
-
-    local UserInputService = game:GetService("UserInputService")
-
-    local gui = script.Parent
-
-    local dragging
-    local dragInput
-    local dragStart
-    local startPos
-
-    local function update(input)
-        local delta = input.Position - dragStart
-        gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-    end
-
-    gui.InputBegan:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-            dragging = true
-            dragStart = input.Position
-            startPos = gui.Position
-
-            input.Changed:Connect(function()
-                if input.UserInputState == Enum.UserInputState.End then
-                    dragging = false
-                end
-            end)
-        end
-    end)
-
-    gui.InputChanged:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-            dragInput = input
-        end
-    end)
-
-    UserInputService.InputChanged:Connect(function(input)
-        if input == dragInput and dragging then
-            update(input)
-        end
-    end)
-end
-coroutine.wrap(VEUJFP_fake_script)()
-local function AKJCSK_fake_script() -- optionspage.Dragging 
-    local script = Instance.new('LocalScript', optionspage)
-
-    local UserInputService = game:GetService("UserInputService")
-
-    local gui = script.Parent
-
-    local dragging
-    local dragInput
-    local dragStart
-    local startPos
-
-    local function update(input)
-        local delta = input.Position - dragStart
-        gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-    end
-
-    gui.InputBegan:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-            dragging = true
-            dragStart = input.Position
-            startPos = gui.Position
-
-            input.Changed:Connect(function()
-                if input.UserInputState == Enum.UserInputState.End then
-                    dragging = false
-                end
-            end)
-        end
-    end)
-
-    gui.InputChanged:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-            dragInput = input
-        end
-    end)
-
-    UserInputService.InputChanged:Connect(function(input)
-        if input == dragInput and dragging then
-            update(input)
-        end
-    end)
-end
-coroutine.wrap(AKJCSK_fake_script)()
-local function VJHASD_fake_script() -- synminbutt.Dragging 
-    local script = Instance.new('LocalScript', synminbutt)
-
-    local UserInputService = game:GetService("UserInputService")
-
-    local gui = script.Parent
-
-    local dragging
-    local dragInput
-    local dragStart
-    local startPos
-
-    local function update(input)
-        local delta = input.Position - dragStart
-        gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-    end
-
-    gui.InputBegan:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-            dragging = true
-            dragStart = input.Position
-            startPos = gui.Position
-
-            input.Changed:Connect(function()
-                if input.UserInputState == Enum.UserInputState.End then
-                    dragging = false
-                end
-            end)
-        end
-    end)
-
-    gui.InputChanged:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-            dragInput = input
-        end
-    end)
-
-    UserInputService.InputChanged:Connect(function(input)
-        if input == dragInput and dragging then
-            update(input)
-        end
-    end)
-end
-coroutine.wrap(VJHASD_fake_script)()
-local function QQFYV_fake_script() -- tabs.Tabs 
-    local script = Instance.new("LocalScript", Tabs)
-
-    local currentTab
-
-    local function getTabs()
-		local tabs = {}
-		for _, v in pairs(script.Parent:GetChildren()) do
-			if v.Name:match("Tab_%d+") then
-				tabs[#tabs + 1] = v
-			end
-		end
-		return tabs
-	end
-
-    local function showTab(tab)
-        currentTab = tab
-        if not tab then
-            script.Parent.Parent.EditorFrame.Source.Text = ""
-            return
-        end
-        tab.ScriptTitle.Size = UDim2.new(0,55,0,19)
-        tab.ScriptTitle.Position = UDim2.new(tab.ScriptTitle.Position.X.Scale, 0, -0.074, 0)
-		tab.RemoveTab.Size = UDim2.new(0, 19, 0, 19)
-		tab.RemoveTab.Position = UDim2.new(tab.RemoveTab.Position.X.Scale, 0, -0.074, 0)
-    
-        script.Parent.Parent.EditorFrame.Source.Text = tostring(tab.Script.Value)
-        for i, v in pairs(getTabs()) do
-            if v ~= currentTab then
-                v.ScriptTitle.Size = UDim2.new(0, 45, 0, 17)
-                v.ScriptTitle.Position = UDim2.new(v.ScriptTitle.Position.X.Scale, 0, -0.066, 0)
-				v.RemoveTab.Size = UDim2.new(0, 24, 0, 17)
-				v.RemoveTab.Position = UDim2.new(v.RemoveTab.Position.X.Scale, 0, -0.066, 0)
-            end
-        end
-    end
-    local function removeTab(tab)
-        local tabs = getTabs()
-		local idx = 0
-		for i = 1, #tabs do
-			if tabs[i] == tab then
-				idx = i
-				tabs[i]:Destroy()
-				table.remove(tabs, i)
-			end
-		end
-	
-		local lastTab do
-			if #tabs > 0 then
-				lastTab = tabs[#tabs]
-			end
-		end
-	
-		for i, v in pairs(tabs) do
-			v.ScriptTitle.Position = tabs[i - 1] and UDim2.new(tabs[i - 1].ScriptTitle.Position.X.Scale + 0.103, 0, -0.074, 0) or UDim2.new(0, 0, -0.074, 0)
-			v.RemoveTab.Position = UDim2.new(v.ScriptTitle.Position.X.Scale + 0.067, 0, -0.074, 0)
-		end
-	
-		script.Parent.NewTab.Position = lastTab and lastTab.RemoveTab.Position + UDim2.new(0.046, 0, 0.008, 0) or UDim2.new(0, 0, -0.066, 0)
-		showTab(currentTab ~= tab and currentTab or tabs[idx] or tabs[idx - 1])
-    end
-
-    local function newTab()
-		local tabs = getTabs()
-		local tab = Instance.new("Folder", script.Parent)
-		local titlescript = Instance.new("TextButton", tab)
-		local remove = Instance.new("TextButton", tab)
-		local tabScript = Instance.new("StringValue", tab)
-		local lastTab do
-			if #tabs > 0 then
-				lastTab = tabs[#tabs]
-			end
-		end
-	
-		tab.Name = ("Tab_%d"):format(#tabs + 1)
-	
-		titlescript.Name = "ScriptTitle"
-		titlescript.BackgroundColor3 = Color3.fromRGB(107, 107, 107)
-		titlescript.BorderSizePixel = 0
-		titlescript.Position = lastTab and UDim2.new(lastTab.ScriptTitle.Position.X.Scale + 0.103, 0, -0.074, 0) or UDim2.new(0, 0, -0.074, 0)
-		titlescript.Size = UDim2.new(0, 44,0, 19)
-		titlescript.Font = Enum.Font.SourceSans
-		titlescript.TextColor3 = Color3.fromRGB(255, 255, 255)
-		titlescript.TextSize = 15
-		titlescript.Text = ("Script %d"):format(#tabs + 1)
-	
-		remove.Name = "RemoveTab"
-		remove.BackgroundColor3 = Color3.fromRGB(107, 107, 107)
-		remove.BorderSizePixel = 0
-		remove.Position = UDim2.new(titlescript.Position.X.Scale + 0.067, 0, -0.074, 0)
-		remove.Size = UDim2.new(0, 24, 0, 19)
-		remove.Font = Enum.Font.SourceSans
-		remove.TextColor3 = Color3.fromRGB(255, 255, 255)
-		remove.TextSize = 14
-		remove.Text = "x"
-	
-		tabScript.Name = "Script"
-	
-		script.Parent.NewTab.Position = remove.Position + UDim2.new(0.046, 0, 0.008, 0)
-		
-		showTab(tab)
-	
-		titlescript.MouseButton1Click:Connect(function()
-			showTab(tab)
-		end)
-		remove.MouseButton1Click:Connect(function()
-			removeTab(tab)
-		end)
-		
-		return tab
-	end
-
-    currenTab = newTab()
-
-    showTab(currentTab)
-
-    script.Parent.NewTab.MouseButton1Click:Connect(function()
-		newTab()
-	end)
-	
-	script.Parent.Parent.EditorFrame.Source:GetPropertyChangedSignal("Text"):Connect(function()
-		currentTab.Script.Value = script.Parent.Parent.EditorFrame.Source.Text
-	end)
-end
-coroutine.wrap(QQFYV_fake_script)()
 while true do
     wait(0.01)
     if scripthub_2.Visible == true then
@@ -1029,9 +724,6 @@ while true do
         end
         if scriptselected == "dumper" then
             descri.Text = "Dumps the place as a .rbxl file in your workspace folder."
-        end
-        if scriptselected == "backdoor" then
-        	descri.Text = "backdoor.exe for scan place to FE access (Only place ban possible)."
         end
     end
 end
