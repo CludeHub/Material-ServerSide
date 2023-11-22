@@ -5,6 +5,7 @@ local SynapseXreal = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
 local bar = Instance.new("Frame")
 local Close = Instance.new("TextButton")
+local Mini = Instance.new("TextButton")
 local ImageLabel = Instance.new("ImageLabel")
 local security = Instance.new("TextLabel")
 local EditorFrame = Instance.new("ScrollingFrame")
@@ -24,6 +25,7 @@ local clear = Instance.new("TextButton")
 local scripthub = Instance.new("TextButton")
 local Attach = Instance.new("TextButton")
 local title_2 = Instance.new("ImageLabel")
+local synminbutt = Instance.new("ImageButton")
 local scripthub_2 = Instance.new("Frame")
 local bar_2 = Instance.new("Frame")
 local select = Instance.new("Frame")
@@ -62,6 +64,43 @@ bar.BackgroundTransparency = 0.800
 bar.BorderSizePixel = 0
 bar.Position = UDim2.new(-0, 0, -0.00296382909, 0)
 bar.Size = UDim2.new(0, 689, 0, 25)
+
+synminbutt.Name = "synminbutt"
+synminbutt.Parent = SynapseXreal
+synminbutt.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+synminbutt.BackgroundTransparency = 1.000
+synminbutt.Position = UDim2.new(0, 0, 0, 0)
+synminbutt.Size = UDim2.new(0, 24, 0, 28)
+synminbutt.Visible = false
+synminbutt.ZIndex = 14
+synminbutt.Image = "http://www.roblox.com/asset/?id=7641125882"
+synminbutt.ImageRectSize = Vector2.new(138, 167)
+synminbutt.MouseButton1Click:Connect(function()
+    MainFrame.Visible = true
+    synminbutt.Visible = false
+end)
+
+Mini.Name = "Mini"
+Mini.Parent = bar
+Mini.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Mini.BackgroundTransparency = 1.000
+Mini.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Mini.BorderSizePixel = 0
+Mini.Position = UDim2.new(0.905521046, 0, 0.01, 0)
+Mini.Size = UDim2.new(0, 21, 0, 25)
+Mini.Font = Enum.Font.Arial
+Mini.Text = "_"
+Mini.TextColor3 = Color3.fromRGB(255, 255, 255)
+Mini.TextSize = 14.000
+Mini.MouseButton1Click:Connect(function()
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "Synapse X";
+        Text = "Synapse X minimized.";
+        Duration = 2;
+    })
+    synminbutt.Visible = true
+    MainFrame.Visible = false
+end)
 
 Close.Name = "Close"
 Close.Parent = bar
@@ -728,6 +767,38 @@ while true do
         end
     end
 end
+local function VJHASD_fake_script() -- synminbutt.Dragging 
+    local script = Instance.new('LocalScript', synminbutt)
+
+    local UserInputService = game:GetService("UserInputService")
+
+    local gui = script.Parent
+
+    local dragging
+    local dragInput
+    local dragStart
+    local startPos
+
+    local function update(input)
+        local delta = input.Position - dragStart
+        gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+    end
+
+    gui.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            dragging = true
+            dragStart = input.Position
+            startPos = gui.Position
+
+            input.Changed:Connect(function()
+                if input.UserInputState == Enum.UserInputState.End then
+                    dragging = false
+                end
+            end)
+        end
+    end)
+
+    
 local function AMNA_fake_script() -- MainFrame.Dragging 
     local script = Instance.new('LocalScript', MainFrame)
 
