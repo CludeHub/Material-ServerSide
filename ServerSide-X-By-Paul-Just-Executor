@@ -259,6 +259,13 @@ game.StarterGui:SetCore("SendNotification", {
     synminbutt.Visible = true
     MainFrame.Visible = false
 end)
+
+ImageLabel.Parent = MainFrame
+ImageLabel.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Position = UDim2.new(0.0252733715, 0, 0.015625, 39)
+ImageLabel.Size = UDim2.new(0, 541, 0, 232)
+
 Script.Name = "Script"
 Script.Parent = Executor
 Script.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
