@@ -65,7 +65,7 @@ SynapseXreal.ResetOnSpawn = false
 MainFrame.Name = "MainFrame"
 MainFrame.Parent = SynapseXreal
 MainFrame.Active = true
-MainFrame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+MainFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 MainFrame.BorderSizePixel = 0
 MainFrame.Position = UDim2.new(0.0543109924, 0, 0.103222892, 0)
 MainFrame.Size = UDim2.new(0, 689, 0, 320)
@@ -73,7 +73,7 @@ MainFrame.Visible = true
 
 bar.Name = "bar"
 bar.Parent = MainFrame
-bar.BackgroundColor3 = Color3.fromRGB(94, 94, 94)
+bar.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
 bar.BackgroundTransparency = 0.800
 bar.BorderSizePixel = 0
 bar.Position = UDim2.new(-0, 0, -0.00296382909, 0)
@@ -81,7 +81,7 @@ bar.Size = UDim2.new(0, 689, 0, 25)
 
 Close.Name = "Close"
 Close.Parent = bar
-Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Close.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 Close.BackgroundTransparency = 1.000
 Close.BorderColor3 = Color3.fromRGB(27, 42, 53)
 Close.BorderSizePixel = 0
@@ -90,14 +90,14 @@ Close.Size = UDim2.new(0, 21, 0, 25)
 Close.Font = Enum.Font.Arial
 Close.Text = "X"
 Close.TextColor3 = Color3.fromRGB(255, 255, 255)
-Close.TextSize = 14.000
+Close.TextSize = 15.000
 Close.MouseButton1Click:Connect(function()
     SynapseXreal:Destroy()
 end)
 
 Mini.Name = "Mini"
 Mini.Parent = bar
-Mini.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Mini.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 Mini.BackgroundTransparency = 1.000
 Mini.BorderColor3 = Color3.fromRGB(27, 42, 53)
 Mini.BorderSizePixel = 0
@@ -106,7 +106,7 @@ Mini.Size = UDim2.new(0, 21, 0, 25)
 Mini.Font = Enum.Font.Arial
 Mini.Text = "_"
 Mini.TextColor3 = Color3.fromRGB(255, 255, 255)
-Mini.TextSize = 14.000
+Mini.TextSize = 15.000
 Mini.MouseButton1Click:Connect(function()
     game.StarterGui:SetCore("SendNotification", {
         Title = "ServerSide";
@@ -119,7 +119,7 @@ end)
 
 Min.Name = "Min"
 Min.Parent = bar
-Min.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Min.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 Min.BackgroundTransparency = 1.000
 Min.BorderColor3 = Color3.fromRGB(27, 42, 53)
 Min.BorderSizePixel = 0
@@ -128,7 +128,7 @@ Min.Size = UDim2.new(0, 21, 0, 25)
 Min.Font = Enum.Font.Arial
 Min.Text = "M"
 Min.TextColor3 = Color3.fromRGB(255, 255, 255)
-Min.TextSize = 14.000
+Min.TextSize = 15.000
 Min.MouseButton1Click:Connect(function()
     game.StarterGui:SetCore("SendNotification", {
         Title = "ServerSide";
@@ -150,14 +150,14 @@ Tabs.Parent = ImageLabel
 
 NewTab.Name = "NewTab"
 NewTab.Parent = Tabs
-NewTab.BackgroundColor3 = Color3.fromRGB(107, 107, 107)
+NewTab.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
 NewTab.BorderSizePixel = 0
 NewTab.Position = UDim2.new(0, 0, -0.0659999996, 0)
 NewTab.Size = UDim2.new(0, 14, 0, 14)
 NewTab.Font = Enum.Font.SourceSans
 NewTab.Text = "+"
 NewTab.TextColor3 = Color3.fromRGB(255, 255, 255)
-NewTab.TextSize = 14.000
+NewTab.TextSize = 15.000
 
 security.Name = "security"
 security.Parent = ImageLabel
@@ -171,7 +171,7 @@ security.TextSize = 14.000
 EditorFrame.Name = "EditorFrame"
 EditorFrame.Parent = ImageLabel
 EditorFrame.Active = true
-EditorFrame.BackgroundColor3 = Color3.fromRGB(37, 37, 37)
+EditorFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 EditorFrame.BackgroundTransparency = 1.000
 EditorFrame.BorderColor3 = Color3.fromRGB(61, 61, 61)
 EditorFrame.Size = UDim2.new(1, 0, 1, 0)
@@ -339,7 +339,7 @@ execute.MouseButton1Click:Connect(function()
     if injected == true then
         loadstring(Source.Text)()
     end
-    if injected == true then
+    if injected == false then
         title.Text = "Server Side - (Not injected! Press attach)"
     end
 end)
@@ -372,9 +372,9 @@ Attach.TextColor3 = Color3.fromRGB(255, 255, 255)
 Attach.TextSize = 14.000
 Attach.MouseButton1Click:Connect(function()
     if injected == true then
-        title.Text = "Synapse X - (Already injected!)"
+        title.Text = "ServerSide - (Already injected!)"
         wait(1)
-        title.Text = "Synapse X - vRBX (Modded by CremiWorld)"
+        title.Text = "ServerSide - vRBX (Modded by CremiWorld)"
     end
     if injected == true then
         title.Text = "ServerSide - (Checking...)"
@@ -387,8 +387,8 @@ Attach.MouseButton1Click:Connect(function()
         wait(0.3)
         title.Text = "ServerSide - (Ready!)"
         wait(0.5)
-        title.Text = "ServerSide - vRBX (Modded by CremiWorld)"
-        injected = true
+        title.Text = "ServerSide - vRBX (Made By Paul)"
+        injected = false
     end
 end)
 
