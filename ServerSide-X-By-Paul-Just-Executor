@@ -24,7 +24,6 @@ local UICorner_3 = Instance.new("UICorner")
 local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
 local EditorScroller = Instance.new("ScrollingFrame")
 local Editor = Instance.new("TextBox")
-local ImageLabel = Instance.new("ImageLabel")
 local Comments_ = Instance.new("TextLabel")
 local Globals_ = Instance.new("TextLabel")
 local Keywords_ = Instance.new("TextLabel")
@@ -211,12 +210,6 @@ Numbers_.TextColor3 = Color3.fromRGB(255, 198, 0)
 Numbers_.TextSize = 15.000
 Numbers_.TextXAlignment = Enum.TextXAlignment.Left
 Numbers_.TextYAlignment = Enum.TextYAlignment.Top
-
-ImageLabel.Parent = Executor
-ImageLabel.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
-ImageLabel.BorderSizePixel = 0
-ImageLabel.Position = UDim2.new(0.0252733715, 0, 0.015625, 39)
-ImageLabel.Size = UDim2.new(0, 541, 0, 232)
 
 UIAspectRatioConstraint_3.Parent = Editor
 UIAspectRatioConstraint_3.AspectRatio = 1.916
