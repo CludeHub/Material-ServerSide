@@ -22,6 +22,7 @@ local UICorner_3 = Instance.new("UICorner")
 local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
 local EditorScroller = Instance.new("ScrollingFrame")
 local Editor = Instance.new("TextBox")
+local Lines = Instance.new("TextLabel")
 local UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint")
 local UIAspectRatioConstraint_4 = Instance.new("UIAspectRatioConstraint")
 local ScriptTab = Instance.new("Frame")
@@ -80,6 +81,18 @@ UICorner_3.Parent = Down
 
 UIAspectRatioConstraint_2.Parent = Down
 UIAspectRatioConstraint_2.AspectRatio = 80.000
+
+Lines.Name = "Lines"
+Lines.Parent = EditorFrame
+Lines.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Lines.BackgroundTransparency = 1.000
+Lines.Size = UDim2.new(0, 30, 1, 0)
+Lines.ZIndex = 4
+Lines.Font = Enum.Font.Code
+Lines.Text = "1"
+Lines.TextColor3 = Color3.fromRGB(255, 255, 255)
+Lines.TextSize = 15.000
+Lines.TextYAlignment = Enum.TextYAlignment.Top
 
 EditorScroller.Name = "EditorScroller"
 EditorScroller.Parent = Executor
